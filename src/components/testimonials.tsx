@@ -54,7 +54,6 @@ const TestimonialsSection = () => {
 
   const renderStars = (rating: number) => {
     const fullStars = Math.floor(rating);
-    const hasHalfStar = rating - fullStars >= 0.5;
 
     return (
       <div className="flex">
