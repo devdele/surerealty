@@ -1,35 +1,10 @@
-import { useState } from "react";
 import { Send, Phone, MapPin, Clock3 } from "lucide-react";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    phoneNumber: "",
-    email: "",
-    enquiryType: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-  };
-
   return (
     <div className="w-full bg-[#E4E5DF] flex flex-col md:flex-row  md:h-[650px] h-[1300px] items-center justify-center md:gap-4 gap-14 p-8">
       <div className="bg-white rounded-[30px] shadow-md w-[365px] md:w-[500px]  md:h-[580px] h-[700px] flex items-center justify-center p- text-left">
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-col justify-center items-center gap-4 w-full"
-        >
+        <form className="flex flex-col justify-center items-center gap-4 w-full">
           <div className="flex flex-col md:flex-row gap-4 w-[350px] md:w-[440px]">
             <div className="flex flex-col w-full">
               <label htmlFor="fullName" className="block text-gray-700">
@@ -39,8 +14,6 @@ const Contact = () => {
                 type="text"
                 id="fullName"
                 name="fullName"
-                value={formData.fullName}
-                onChange={handleChange}
                 placeholder="Enter your full name"
                 className="border border-gray-300 rounded-md h-[50px] pl-2 bg-[#E5E5E5]"
               />
@@ -53,8 +26,6 @@ const Contact = () => {
                 type="tel"
                 id="phoneNumber"
                 name="phoneNumber"
-                value={formData.phoneNumber}
-                onChange={handleChange}
                 placeholder="Enter your phone number"
                 className="border border-gray-300 rounded-md h-[50px] pl-2 bg-[#E5E5E5]"
               />
@@ -68,8 +39,6 @@ const Contact = () => {
               type="email"
               id="email"
               name="email"
-              value={formData.email}
-              onChange={handleChange}
               placeholder="Enter your email address"
               className="border border-gray-300 rounded-md h-[50px] pl-2 bg-[#E5E5E5]"
             />
@@ -82,7 +51,6 @@ const Contact = () => {
               name="enquiryType"
               id="enquiryType"
               className="border border-gray-300 rounded-md h-[50px] pl-2 bg-[#E5E5E5]"
-              onChange={handleChange}
             >
               <option value="">--Select One--</option>
               <option value="Technical Support">Technical Support</option>
@@ -98,7 +66,6 @@ const Contact = () => {
               name="message"
               id="message"
               className="border border-gray-300 rounded-md h-[140px] pl-2 bg-[#E5E5E5]"
-              onChange={handleChange}
             ></textarea>
           </div>
           <button className="bg-green-800 h-[40px] w-full max-w-[170px] rounded-[30px] text-white cursor-pointer hover:bg-green-600">

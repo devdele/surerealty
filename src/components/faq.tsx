@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ChevronUp, ChevronDown, ArrowUpRight } from "lucide-react";
 
 const FAQSection = () => {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs = [
     {
@@ -38,7 +38,7 @@ const FAQSection = () => {
     },
   ];
 
-  const toggleQuestion = (index) =>
+  const toggleQuestion = (index: number) =>
     setOpenIndex(openIndex === index ? null : index);
 
   return (
